@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: <%=data['maven-artifact-id']%>-api
+
+encrypt: 
+  failOnError: false
+
+swagger: 
+  basePackage: '{java-base-package}'

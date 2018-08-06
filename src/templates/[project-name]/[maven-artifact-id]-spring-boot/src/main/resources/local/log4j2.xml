@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </Console>
+    <!-- File Appender
+    <File name="File" fileName="d:/log/${hostName}.log">
+      <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+    </File>
+     -->
+    <Kafka name="Kafka" topic="mes-log">
+      <PatternLayout pattern="${hostName} %date %message" />
+      <Property name="bootstrap.servers">KAFKA:9092</Property>
+    </Kafka>
+  </Appenders>
+
+  <Loggers>
+    <!-- Log everything in custom package -->
+    <Logger name="<%=data['java-base-package']%>" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+      <AppenderRef ref="Kafka" />
+
+    </Logger>
+    <Logger name="com.poscoict" level="info" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+
+
+    <!-- Log everything in Spring Boot -->
+    <Logger name="org.springframework.boot" level="info" additivity="false">
+      <AppenderRef ref="Console" />
+
+    </Logger>
+    <!-- Log everything in Spring Core -->
+    <Logger name="org.springframework.core" level="info" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+
+
+    <Root level="error">
+      <AppenderRef ref="Console" />
+    </Root>
+  </Loggers>
+</Configuration>

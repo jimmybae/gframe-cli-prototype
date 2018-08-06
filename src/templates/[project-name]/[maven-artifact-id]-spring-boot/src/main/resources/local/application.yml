@@ -1,0 +1,54 @@
+server: 
+  port: 8080
+
+eureka: 
+  client: 
+    serverUrl: 
+      defaultZone: http://bureau-service:8082/eureka/
+    enable: true
+
+spring: 
+  datasource: 
+    url: jdbc:mysql://localhost:3306/POSCONT
+    username: poscopoc
+    password: poscopoc
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa: 
+    hibernate: 
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+    properties: 
+      hibernate: 
+        format_sql: true
+  kafka: 
+    producer: 
+      bootstrap-servers: KAFKA:9092
+      properties: 
+        metadata.broker.list: KAFKA:9092
+  cloud: 
+    stream: 
+      kafka: 
+        binder: 
+          zk-nodes: KAFKA:2181
+      bindings: 
+        input: 
+          destination: template
+          content-type: application/json
+          groupt: templateGroup
+        output-another1: 
+          destination: another1
+          content-type: application/json
+        output-another2:
+          destination: another2
+          content-type: application/json
+
+feign: 
+  hystrix: 
+    enabled: false
+
+swagger: 
+  title: '...'
+  description: '....'
+  termsOfServiceUrl: 'callgate-service:8081/<%=data['maven-artifact-id']%>-api'
+          

@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId><%=data['maven-group-id']%></groupId>
+	<artifactId><%=data['maven-artifact-id']%></artifactId>
+	<version><%=data['maven-version']%></version>
+	<packaging>pom</packaging>
+	<modules>
+		<module><%=data['maven-artifact-id']%>-domain</module>
+		<module><%=data['maven-artifact-id']%>-service</module>
+<% if(data['maven-module-names'].includes('adapter')) { %>		<module><%=data['maven-artifact-id']%>-adapter-stub</module>
+		<module><%=data['maven-artifact-id']%>-adapter-skeleton</module>
+		<module><%=data['maven-artifact-id']%>-client</module><% } %>
+<% if(data['maven-module-names'].includes('ui')) { %>		<module><%=data['maven-artifact-id']%>-front</module><% } %>
+<% if(data['maven-module-names'].includes('api')) { %>		<module><%=data['maven-artifact-id']%>-spring-boot</module><% } %>
+	</modules>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+	</parent>
+</project>

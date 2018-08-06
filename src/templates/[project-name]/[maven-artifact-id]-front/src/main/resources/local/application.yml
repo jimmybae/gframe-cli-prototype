@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://bureau-service:8082/eureka
+    enabled: true
+
+spring:
+  thymeleaf: 
+    prefix: classpath:/static/
+
+callgate:
+  domain: http://callgate-servie:8081

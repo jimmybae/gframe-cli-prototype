@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId><%=data['maven-group-id']%></groupId>
+		<artifactId><%=data['maven-artifact-id']%></artifactId>
+		<version><%=data['maven-version']%></version>
+	</parent>
+	<artifactId><%=data['maven-artifact-id']%>-skeleton</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId><%=data['maven-group-id']%></groupId>
+			<artifactId><%=data['maven-artifact-id']%>-adapter-stub</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId><%=data['maven-group-id']%></groupId>
+			<artifactId><%=data['maven-artifact-id']%>-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

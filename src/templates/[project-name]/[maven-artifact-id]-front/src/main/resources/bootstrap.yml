@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: <%=data['maven-artifact-id']%>
+encrypt:
+  failOnError: false

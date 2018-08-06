@@ -1,0 +1,26 @@
+{
+  "name": "gframe-cli-prototype",
+  "version": "1.0.0",
+  "bin": {
+    "gframe": "./src/index.js"
+  },
+  "description": "CLI for creating Gframework project",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Jimmy Bae",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "figlet": "^1.2.0",
+    "fs-extra": "^7.0.0",
+    "inquirer": "^6.0.0",
+    "lodash": "^4.17.10",
+    "prettier": "^1.13.7"
+  }
+}

@@ -1,0 +1,1 @@
+package <%=data['java-base-package']%>.domain.spec;
