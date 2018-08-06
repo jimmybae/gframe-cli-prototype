@@ -47,7 +47,7 @@ module.exports = class Question {
         return true;
       },
       default: function() {
-        return 'com.poscoict.biz';
+        return 'com.company.biz';
       }
     }
   }

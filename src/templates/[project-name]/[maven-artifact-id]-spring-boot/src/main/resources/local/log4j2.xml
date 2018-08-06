@@ -22,7 +22,7 @@
       <AppenderRef ref="Kafka" />
 
     </Logger>
-    <Logger name="com.poscoict" level="info" additivity="false">
+    <Logger name="com.company" level="info" additivity="false">
       <AppenderRef ref="Console" />
     </Logger>
 

@@ -29,7 +29,7 @@ program
     console.log('  Examples:');
     console.log();
     console.log('    $ gframe init [options]');
-    console.log('    $ gframe init -P biz -g com.poscoict.biz -a biz -v 0.0.1-SNAPSHOT -m "adapter, ui, api" -p com.poscoict.biz -A Biz');
+    console.log('    $ gframe init -P biz -g com.company.biz -a biz -v 0.0.1-SNAPSHOT -m "adapter, ui, api" -p com.company.biz -A Biz');
     console.log('    $ gframe init -h');
     console.log();
     console.log('    $ gframe add [options]');
@@ -41,11 +41,11 @@ program
   .command('init')
   .description('Helps to initialize the GFramework project.')
   .option('-P, --project-name <project name>', chalk.yellow('-P biz'))
-  .option('-g, --maven-group-id <maven group id>', chalk.yellow('-g com.poscoict.biz'))
+  .option('-g, --maven-group-id <maven group id>', chalk.yellow('-g com.company.biz'))
   .option('-a, --maven-artifact-id <maven artifact id>', chalk.yellow('-a biz'))
   .option('-v, --maven-version <maven version>', chalk.yellow('-v 0.0.1-SNAPSHOT'))
   .option('-m, --maven-module-names <maven module names>', chalk.yellow('-m "adapter, ui, api" ') + chalk.red('(adding automatically "domain, service")'))
-  .option('-p, --java-base-package <java base package>', chalk.yellow('-p com.poscoict.biz'))
+  .option('-p, --java-base-package <java base package>', chalk.yellow('-p com.company.biz'))
   .option('-A, --spring-boot-app-name <spring boot app name>', chalk.yellow('-A Biz'))
   .action(actionInit);
 
