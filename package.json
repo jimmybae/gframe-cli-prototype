@@ -4,6 +4,10 @@
   "bin": {
     "gframe": "./src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmybae/gframe-cli-prototype.git"
+  },
   "description": "CLI for creating Gframework project",
   "main": "./src/index.js",
   "scripts": {
